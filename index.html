@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Atelier,A Fashion House</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+        <meta name="description" content="Responsive Image Gallery with jQuery" />
+        <meta name="keywords" content="jquery, carousel, image gallery, slider, responsive, flexible, fluid, resize, css3" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="images/logo/favicon.png"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+		<noscript>
+			<style>
+				.es-carousel ul{
+					display:block;
+				}
+				#logo {
+				  width: 100px;
+				  height: 56px;
+				  /* float: right; */
+				  /* position: relative; */
+				  margin-right: 5%;
+				}
+			</style>
+		</noscript>
+		<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+			<div class="rg-image-wrapper">
+				{{if itemsCount > 1}}
+					<div class="rg-image-nav">
+						<a href="#" class="rg-image-nav-prev">Previous Image</a>
+						<a href="#" class="rg-image-nav-next">Next Image</a>
+					</div>
+				{{/if}}
+				<div class="rg-image"></div>
+				<div class="rg-loading"></div>
+				<div class="rg-caption-wrapper">
+					<div class="rg-caption" style="display:none;">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</script>
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<img id="logo" src="images/logo/Capture.png" alt="Atelier" style="margin-right:5%;">
+					<nav>
+						  
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<!-- <li><a href="#one">Who we are</a></li> -->
+							<li><a href="#two">What we do</a></li>
+							<li><a href="#four">Gallery</a></li>
+							<li><a href="#three">Get in touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner"><!--ChunkFiveRegular,Tangerine,Calibri,Papyrus-->
+							<h1 style="font-style: italic;font-family: Papyrus;">Atelier,A Fashion House</h1>
+							<p>Atelier  imbibes an entirely new concept of serving handloom designing with solutions that are latest, attractive, and driven by a team who thrive to excel in their services in providing a high return on investment.</p>
+							<p>Atelier  is the brainchild of Amrita Ghosh,who laid the foundation of this company with her vision to see a difference in designing industry.</p>
+							<p>Atelier officially started up in 2014.The startup has been journeying through trial and errors and with each passing day it has seen so many avenues and successfully passed all challenges it has faced. </p>
+							<!-- <ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul> -->
+						</div>
+					</section>
+
+				<!-- One -->
+					<!-- <section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Sed ipsum dolor</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Feugiat consequat</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Ultricies aliquam</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section> -->
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>Handloom is not just about wearing a certain fabric, it is connected to Indian history and politics deeply. Supporting prints,texture made on handloom was a trend common only among the arty, hipster crowd. </p>
+							<p>We engage in manufacturing an exclusive range of ladies and gents designer wears,home linens,craft items & accessories. Ladies-Kurti,Salwar,Kameez,T-Shirts,Sarees,Gents-T-Shirts,Kurta,Punjabi,Home Li nens-Bedcover,Bedsheet,Table cloth,Craft items,Flower vase.</p>
+							<!-- <div class="features">
+								<section>
+									<span class="icon major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-chain"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-diamond"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+							</div> -->
+							<!-- <ul class="actions">
+								<li><a href="#" class="button">Learn more</a></li>
+							</ul> -->
+						</div>
+					</section>
+					
+					<!-- Four -->
+					<section id="four" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Gallery</h2>
+							<p>Here we are with our collections of an exclusive range of ladies and gents designer wears</p>
+							<div class="container">
+			<!--<div class="header">
+				<a href="http://tympanus.net/Development/Elastislide/"><span>&laquo; Previous Demo: </span>Elastislide</a>
+				<span class="right_ab">
+					<a href="http://www.flickr.com/photos/smanography/" target="_blank">Images by Shermeee</a>
+					<a href="http://creativecommons.org/licenses/by/2.0/deed.en_GB">CC BY 2.0</a>
+					<a href="http://tympanus.net/codrops/2011/09/20/responsive-image-gallery/"><strong>back to the Codrops post</strong></a>
+				</span>
+				<div class="clr"></div>
+			</div> -->
+			
+			<div class="content">
+				<div id="rg-gallery" class="rg-gallery">
+					<div class="rg-thumbs">
+						<!-- Elastislide Carousel Thumbnail Viewer -->
+						<div class="es-carousel-wrapper">
+							<div class="es-carousel">
+								<ul>
+									<li><a href="#"><img src="images/thumbs/1.jpg" data-large="images/1.jpg" alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
+									<li><a href="#"><img src="images/thumbs/2.jpg" data-large="images/2.jpg" alt="image02" data-description="A plaintful story from a sistering vale" /></a></li>
+									<li><a href="#"><img src="images/thumbs/3.jpg" data-large="images/3.jpg" alt="image03" data-description="A plaintful story from a sistering vale" /></a></li>
+									<li><a href="#"><img src="images/thumbs/4.jpg" data-large="images/4.jpg" alt="image04" data-description="My spirits to attend this double voice accorded" /></a></li>
+									<li><a href="#"><img src="images/thumbs/5.jpg" data-large="images/5.jpg" alt="image05" data-description="And down I laid to list the sad-tuned tale" /></a></li>
+									<li><a href="#"><img src="images/thumbs/6.jpg" data-large="images/6.jpg" alt="image06" data-description="Ere long espied a fickle maid full pale" /></a></li>
+									<li><a href="#"><img src="images/thumbs/7.jpg" data-large="images/7.jpg" alt="image07" data-description="Tearing of papers, breaking rings a-twain" /></a></li>
+									<li><a href="#"><img src="images/thumbs/8.jpg" data-large="images/8.jpg" alt="image08" data-description="Storming her world with sorrow's wind and rain" /></a></li>
+									<li><a href="#"><img src="images/thumbs/9.jpg" data-large="images/9.jpg" alt="image09" data-description="Upon her head a platted hive of straw" /></a></li>
+									<li><a href="#"><img src="images/thumbs/10.jpg" data-large="images/10.jpg" alt="image10" data-description="Which fortified her visage from the sun" /></a></li>
+									<li><a href="#"><img src="images/thumbs/11.jpg" data-large="images/11.jpg" alt="image11" data-description="Whereon the thought might think sometime it saw" /></a></li>
+									<li><a href="#"><img src="images/thumbs/12.jpg" data-large="images/12.jpg" alt="image12" data-description="The carcass of beauty spent and done" /></a></li>
+									<li><a href="#"><img src="images/thumbs/13.jpg" data-large="images/13.jpg" alt="image13" data-description="Time had not scythed all that youth begun" /></a></li>
+									<li><a href="#"><img src="images/thumbs/14.jpg" data-large="images/14.jpg" alt="image14" data-description="Nor youth all quit; but, spite of heaven's fell rage" /></a></li>
+									<li><a href="#"><img src="images/thumbs/15.jpg" data-large="images/15.jpg" alt="image15" data-description="Some beauty peep'd through lattice of sear'd age" /></a></li>
+									<li><a href="#"><img src="images/thumbs/16.jpg" data-large="images/16.jpg" alt="image16" data-description="Oft did she heave her napkin to her eyne" /></a></li>
+									<li><a href="#"><img src="images/thumbs/17.jpg" data-large="images/17.jpg" alt="image17" data-description="Which on it had conceited characters" /></a></li>
+									<li><a href="#"><img src="images/thumbs/18.jpg" data-large="images/18.jpg" alt="image18" data-description="Laundering the silken figures in the brine" /></a></li>
+									<li><a href="#"><img src="images/thumbs/19.jpg" data-large="images/19.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/20.jpg" data-large="images/20.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/21.jpg" data-large="images/21.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<li><a href="#"><img src="images/thumbs/22.jpg" data-large="images/22.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
+									<li><a href="#"><img src="images/thumbs/23.jpg" data-large="images/23.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/24.jpg" data-large="images/24.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/25.jpg" data-large="images/25.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/26.jpg" data-large="images/26.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/27.jpg" data-large="images/27.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<li><a href="#"><img src="images/thumbs/28.jpg" data-large="images/28.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
+									<li><a href="#"><img src="images/thumbs/29.jpg" data-large="images/29.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/30.jpg" data-large="images/31.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/31.jpg" data-large="images/31.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/32.jpg" data-large="images/32.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/33.jpg" data-large="images/33.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<li><a href="#"><img src="images/thumbs/34.jpg" data-large="images/34.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
+									<li><a href="#"><img src="images/thumbs/35.jpg" data-large="images/35.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/36.jpg" data-large="images/36.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/37.jpg" data-large="images/37.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/38.jpg" data-large="images/38.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/39.jpg" data-large="images/39.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<li><a href="#"><img src="images/thumbs/40.jpg" data-large="images/40.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
+									<li><a href="#"><img src="images/thumbs/41.jpg" data-large="images/41.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/42.jpg" data-large="images/42.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/43.jpg" data-large="images/43.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/44.jpg" data-large="images/44.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/45.jpg" data-large="images/45.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<li><a href="#"><img src="images/thumbs/46.jpg" data-large="images/46.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
+									<li><a href="#"><img src="images/thumbs/47.jpg" data-large="images/47.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/48.jpg" data-large="images/48.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/49.jpg" data-large="images/49.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/50.jpg" data-large="images/50.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/51.jpg" data-large="images/51.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<li><a href="#"><img src="images/thumbs/52.jpg" data-large="images/52.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
+									<li><a href="#"><img src="images/thumbs/53.jpg" data-large="images/53.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/54.jpg" data-large="images/54.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/55.jpg" data-large="images/55.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/56.jpg" data-large="images/56.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- End Elastislide Carousel Thumbnail Viewer -->
+					</div><!-- rg-thumbs -->
+				</div><!-- rg-gallery -->
+				<!-- <p class="sub">Want more Shakespeare? <a href="http://www.opensourceshakespeare.org/" target="_blank">http://www.opensourceshakespeare.org/</a></p> -->
+			</div><!-- content -->
+		</div><!-- container -->
+						</div>
+					</section>
+			
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>We are here to answer any question you may have about our experience. reach out to us &amp;  we'll respond as soon as we can.Even if there is something you have always wanted to experience and cant find it in our website,let us know and we promise we'll do our best to find it for you.
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="5"></textarea>
+										</div>
+										<ul class="actions">
+											<li><a href="mailto:g.amrita17@gmail.com" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>Rishi Bankim Nagar<br />
+											P.O+ P.S- Baruipur<br />
+											Kolkata- 700144,West Bengal,India</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="mailto:a2atelier.ag@gmail.com">g.amrita17@gmail.com</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>+917044958767</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+			<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+			<script type="text/javascript" src="js/jquery.elastislide.js"></script>
+			<script type="text/javascript" src="js/gallery.js"></script>
+	</body>
+</html>
