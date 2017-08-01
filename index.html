@@ -17,13 +17,86 @@
         <meta name="description" content="Atelier, A Fashion House" />
         <meta name="keywords" content="jquery, carousel, image gallery, slider, responsive, flexible, fluid, resize, css3" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="images/logo/favicon.ico"> 
+		<link rel="shortcut icon" href="./images/logo/favicon.ico">
+
+		<!-- <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff"> -->
+
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+		
+		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+  		<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+  		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 		<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
 		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+		 <script type="text/javascript">
+
+  
+     $(document).ready(function() {
+         $('#slider').cycle({
+          containerResize: false,
+          fx:'fade',
+          width: '100%',
+		fit: 1
+         });
+     });
+
+     /*var service_id = 'a2atelier.ag@gmail.com';
+     var template_id = 'feedback_email';
+     var template_params = {
+     name: 'Amrita',
+     reply_email: 'a2atelier.ag@gmail.com',
+     message: 'This is awesome!'
+     };
+
+     emailjs.send(service_id,template_id,template_params);
+*/
+	
+	  (function(){
+	      emailjs.init("user_qxg2eHs7oPjxXLx7EDL5j");
+	   })();
+
+     var myform = $("form#myform");
+     //alert("hiiii");
+     myform.submit(function(event){
+     	event.preventDefault();
+
+       // Change to your service ID, or keep using the default service
+       var service_id = "default_service";
+       var template_id = "feedback_email";
+
+       myform.find("button").text("Sending...");
+       emailjs.sendForm(service_id,template_id,"myform")
+       	.then(function(){ 
+         	alert("Sent!");
+            myform.find("button").text("Send");
+         }, function(err) {
+            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+            myform.find("button").text("Send");
+         });
+       return false;
+     });
+	 </script>
 		<noscript>
 			<style>
 				.es-carousel ul{
@@ -35,6 +108,24 @@
 				  /* float: right; */
 				  /* position: relative; */
 				  margin-right: 5%;
+				}
+				#slider 
+				{
+				 z-index:-1;
+				 margin:auto auto;
+				 top:0px;
+				 position:absolute;
+				 height:480px;
+				 width:100%;
+				}
+				.slider_image
+				{
+				  height:100%;
+				  width:100%;
+				}
+				#intro{
+
+				 margin-top: -250px;
 				}
 			</style>
 		</noscript>
@@ -61,12 +152,18 @@
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
-					<img id="logo" src="./images/logo/Capture.PNG" alt="Atelier" style="margin-right:5%;">
+					<img id="logo" src="./images/logo/Capture1.PNG" alt="Atelier" style="margin-right:5%;">
 					<nav>
 						  
 						<ul>
+							<!-- <li class="new-element" style="display:inline-block;">
+							  <a>
+							    <img id="logo" src="./images/logo/Capture11.JPG">
+							  </a>
+							</li> -->
+
 							<li><a href="#intro">Welcome</a></li>
-							<!-- <li><a href="#one">Who we are</a></li> -->
+							<li><a href="#one">Who we are</a></li>
 							<li><a href="#two">What we do</a></li>
 							<li><a href="#four">Gallery</a></li>
 							<li><a href="#three">Get in touch</a></li>
@@ -79,12 +176,20 @@
 			<div id="wrapper">
 
 				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+					<section id="intro" class="wrapper style1 fullscreen fade-up" style="margin-top:-170px;">
 						<div class="inner"><!--ChunkFiveRegular,Tangerine,Calibri,Papyrus-->
 							<h1 style="font-style: italic;font-family: Papyrus;">Atelier,A Fashion House</h1>
-							<p>Atelier  imbibes an entirely new concept of serving handloom designing with solutions that are latest, attractive, and driven by a team who thrive to excel in their services in providing a high return on investment.</p>
+							    <div id='slider'>
+							          <img src='./images/slider/slider_img_resize.jpg' class = "slider_image">
+							          <img src='./images/slider/slider_img3.jpg' class = "slider_image">
+							          <img src='./images/slider/slider_img4.jpg' class = "slider_image">
+							          <img src='./images/slider/slider_img2.jpg' class = "slider_image">
+							          <img src='./images/slider/slider_img5.jpg' class = "slider_image">
+							          <img src='./images/slider/slider_img4.jpg' class = "slider_image">
+							</div><!--slider div ends here-->
+							<!-- <p>Atelier  imbibes an entirely new concept of serving handloom designing with solutions that are latest, attractive, and driven by a team who thrive to excel in their services in providing a high return on investment.</p>
 							<p>Atelier  is the brainchild of Amrita Ghosh,who laid the foundation of this company with her vision to see a difference in designing industry.</p>
-							<p>Atelier officially started up in 2015.The startup has been journeying through trial and errors and with each passing day it has seen so many avenues and successfully passed all challenges it has faced. </p>
+							<p>Atelier officially started up in 2015.The startup has been journeying through trial and errors and with each passing day it has seen so many avenues and successfully passed all challenges it has faced. </p> -->
 							<!-- <ul class="actions">
 								<li><a href="#one" class="button scrolly">Learn more</a></li>
 							</ul> -->
@@ -92,6 +197,15 @@
 					</section>
 
 				<!-- One -->
+				 <section id="one" class="wrapper style2 spotlights">
+						<div class="inner">
+							<h2>Who we are</h2>
+							<p>Atelier  imbibes an entirely new concept of serving handloom designing with solutions that are latest, attractive, and driven by a team who thrive to excel in their services in providing a high return on investment.</p>
+							<p>Atelier  is the brainchild of Amrita Ghosh,who laid the foundation of this company with her vision to see a difference in designing industry.</p>
+							<p>Atelier officially started up in 2015.The startup has been journeying through trial and errors and with each passing day it has seen so many avenues and successfully passed all challenges it has faced. </p>
+					</section> 
+
+				<!-- Two -->
 					<!-- <section id="one" class="wrapper style2 spotlights">
 						<section>
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
@@ -198,20 +312,20 @@
 						<div class="es-carousel-wrapper">
 							<div class="es-carousel">
 								<ul>
-									<li><a href="#"><img src="images/thumbs/1.jpg" data-large="images/1.jpg" alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
-									<li><a href="#"><img src="images/thumbs/2.jpg" data-large="images/2.jpg" alt="image02" data-description="A plaintful story from a sistering vale" /></a></li>
-									<li><a href="#"><img src="images/thumbs/3.jpg" data-large="images/3.jpg" alt="image03" data-description="A plaintful story from a sistering vale" /></a></li>
-									<li><a href="#"><img src="images/thumbs/4.jpg" data-large="images/4.jpg" alt="image04" data-description="My spirits to attend this double voice accorded" /></a></li>
-									<li><a href="#"><img src="images/thumbs/5.jpg" data-large="images/5.jpg" alt="image05" data-description="And down I laid to list the sad-tuned tale" /></a></li>
-									<li><a href="#"><img src="images/thumbs/6.jpg" data-large="images/6.jpg" alt="image06" data-description="Ere long espied a fickle maid full pale" /></a></li>
-									<li><a href="#"><img src="images/thumbs/7.jpg" data-large="images/7.jpg" alt="image07" data-description="Tearing of papers, breaking rings a-twain" /></a></li>
-									<li><a href="#"><img src="images/thumbs/8.jpg" data-large="images/8.jpg" alt="image08" data-description="Storming her world with sorrow's wind and rain" /></a></li>
-									<li><a href="#"><img src="images/thumbs/9.jpg" data-large="images/9.jpg" alt="image09" data-description="Upon her head a platted hive of straw" /></a></li>
-									<li><a href="#"><img src="images/thumbs/10.jpg" data-large="images/10.jpg" alt="image10" data-description="Which fortified her visage from the sun" /></a></li>
-									<li><a href="#"><img src="images/thumbs/11.jpg" data-large="images/11.jpg" alt="image11" data-description="Whereon the thought might think sometime it saw" /></a></li>
-									<li><a href="#"><img src="images/thumbs/12.jpg" data-large="images/12.jpg" alt="image12" data-description="The carcass of beauty spent and done" /></a></li>
+									<li><a href="#"><img src="images/thumbs/1.jpg" data-large="images/1.jpg" alt="image01" data-description="A_P'01" /></a></li>
+									<li><a href="#"><img src="images/thumbs/2.jpg" data-large="images/2.jpg" alt="image02" data-description="A_P'02" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/3.jpg" data-large="images/3.jpg" alt="image03" data-description="A plaintful story from a sistering vale" /></a></li>
+									<li><a href="#"><img src="images/thumbs/4.jpg" data-large="images/4.jpg" alt="image04" data-description="My spirits to attend this double voice accorded" /></a></li>  -->
+									<li><a href="#"><img src="images/thumbs/5.jpg" data-large="images/5.jpg" alt="image05" data-description="A_PcK'05" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/6.jpg" data-large="images/6.jpg" alt="image06" data-description="Ere long espied a fickle maid full pale" /></a></li>
+									<li><a href="#"><img src="images/thumbs/7.jpg" data-large="images/7.jpg" alt="image07" data-description="Tearing of papers, breaking rings a-twain" /></a></li>  -->
+									<li><a href="#"><img src="images/thumbs/8.jpg" data-large="images/8.jpg" alt="image08" data-description="A_S'02" /></a></li>
+									<li><a href="#"><img src="images/thumbs/9.jpg" data-large="images/9.jpg" alt="image09" data-description="A_Pc'35" /></a></li>
+									<li><a href="#"><img src="images/thumbs/10.jpg" data-large="images/10.jpg" alt="image10" data-description="A_P'03" /></a></li>
+									<li><a href="#"><img src="images/thumbs/11.jpg" data-large="images/11.jpg" alt="image11" data-description="A_S'01" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/12.jpg" data-large="images/12.jpg" alt="image12" data-description="The carcass of beauty spent and done" /></a></li>
 									<li><a href="#"><img src="images/thumbs/13.jpg" data-large="images/13.jpg" alt="image13" data-description="Time had not scythed all that youth begun" /></a></li>
-									<li><a href="#"><img src="images/thumbs/14.jpg" data-large="images/14.jpg" alt="image14" data-description="Nor youth all quit; but, spite of heaven's fell rage" /></a></li>
+									<li><a href="#"><img src="images/thumbs/14.jpg" data-large="images/14.jpg" alt="image14" data-description="Nor youth all quit; but, spite of heaven's fell rage" /></a></li>-->
 									<li><a href="#"><img src="images/thumbs/15.jpg" data-large="images/15.jpg" alt="image15" data-description="Some beauty peep'd through lattice of sear'd age" /></a></li>
 									<li><a href="#"><img src="images/thumbs/16.jpg" data-large="images/16.jpg" alt="image16" data-description="Oft did she heave her napkin to her eyne" /></a></li>
 									<li><a href="#"><img src="images/thumbs/17.jpg" data-large="images/17.jpg" alt="image17" data-description="Which on it had conceited characters" /></a></li>
@@ -222,38 +336,48 @@
 									<li><a href="#"><img src="images/thumbs/22.jpg" data-large="images/22.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
 									<li><a href="#"><img src="images/thumbs/23.jpg" data-large="images/23.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
 									<li><a href="#"><img src="images/thumbs/24.jpg" data-large="images/24.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/25.jpg" data-large="images/25.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/26.jpg" data-large="images/26.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/27.jpg" data-large="images/27.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
-									<li><a href="#"><img src="images/thumbs/28.jpg" data-large="images/28.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
-									<li><a href="#"><img src="images/thumbs/29.jpg" data-large="images/29.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
-									<li><a href="#"><img src="images/thumbs/30.jpg" data-large="images/31.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/31.jpg" data-large="images/31.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/32.jpg" data-large="images/32.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/33.jpg" data-large="images/33.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
-									<li><a href="#"><img src="images/thumbs/34.jpg" data-large="images/34.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
-									<li><a href="#"><img src="images/thumbs/35.jpg" data-large="images/35.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
-									<li><a href="#"><img src="images/thumbs/36.jpg" data-large="images/36.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/37.jpg" data-large="images/37.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/38.jpg" data-large="images/38.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/39.jpg" data-large="images/39.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
-									<li><a href="#"><img src="images/thumbs/40.jpg" data-large="images/40.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
-									<li><a href="#"><img src="images/thumbs/41.jpg" data-large="images/41.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
-									<li><a href="#"><img src="images/thumbs/42.jpg" data-large="images/42.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/43.jpg" data-large="images/43.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/44.jpg" data-large="images/44.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/45.jpg" data-large="images/45.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
-									<li><a href="#"><img src="images/thumbs/46.jpg" data-large="images/46.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
-									<li><a href="#"><img src="images/thumbs/47.jpg" data-large="images/47.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
-									<li><a href="#"><img src="images/thumbs/48.jpg" data-large="images/48.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/49.jpg" data-large="images/49.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
-									<li><a href="#"><img src="images/thumbs/50.jpg" data-large="images/50.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/25.jpg" data-large="images/25.jpg" alt="image25" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/26.jpg" data-large="images/26.jpg" alt="image26" data-description="And often reading what contents it bears" /></a></li>-->
+									<li><a href="#"><img src="images/thumbs/27.jpg" data-large="images/27.jpg" alt="image27" data-description="As often shrieking undistinguish'd woe" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/28.jpg" data-large="images/28.jpg" alt="image28" data-description="In clamours of all size, both high and low" /></a></li>-->
+									<li><a href="#"><img src="images/thumbs/29.jpg" data-large="images/29.jpg" alt="image29" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/30.jpg" data-large="images/31.jpg" alt="image30" data-description="As they did battery to the spheres intend" /></a></li>
+									<li><a href="#"><img src="images/thumbs/31.jpg" data-large="images/31.jpg" alt="image31" data-description="That season'd woe had pelleted in tears" /></a></li>
+									<li><a href="#"><img src="images/thumbs/32.jpg" data-large="images/32.jpg" alt="image32" data-description="And often reading what contents it bears" /></a></li>-->
+									<li><a href="#"><img src="images/thumbs/33.jpg" data-large="images/33.jpg" alt="image33" data-description="A_PcK'27" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/34.jpg" data-large="images/34.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>-->
+									<li><a href="#"><img src="images/thumbs/35.jpg" data-large="images/35.jpg" alt="image23" data-description="A_RmK'01" /></a></li>
+									<li><a href="#"><img src="images/thumbs/36.jpg" data-large="images/36.jpg" alt="image24" data-description="A_P'04" /></a></li>
+									<li><a href="#"><img src="images/thumbs/37.jpg" data-large="images/37.jpg" alt="image19" data-description="A_PcK'44" /></a></li>
+									<li><a href="#"><img src="images/thumbs/38.jpg" data-large="images/38.jpg" alt="image20" data-description="A_PcK'46" /></a></li>
+									<li><a href="#"><img src="images/thumbs/39.jpg" data-large="images/39.jpg" alt="image21" data-description="A_PcK'42" /></a></li>
+									<li><a href="#"><img src="images/thumbs/40.jpg" data-large="images/40.jpg" alt="image22" data-description="A_PcK'42" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/41.jpg" data-large="images/41.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
+									<li><a href="#"><img src="images/thumbs/42.jpg" data-large="images/42.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>-->
+									<li><a href="#"><img src="images/thumbs/43.jpg" data-large="images/43.jpg" alt="image19" data-description="A_PcK'40" /></a></li>
+									<li><a href="#"><img src="images/thumbs/44.jpg" data-large="images/44.jpg" alt="image20" data-description="A_PcK'34" /></a></li>
+									<li><a href="#"><img src="images/thumbs/45.jpg" data-large="images/45.jpg" alt="image21" data-description="A_PcK'42 Sleeve Work" /></a></li>
+									<li><a href="#"><img src="images/thumbs/46.jpg" data-large="images/46.jpg" alt="image22" data-description="A_Pc'33" /></a></li>
+									<li><a href="#"><img src="images/thumbs/47.jpg" data-large="images/47.jpg" alt="image23" data-description="A_Pc'33 Sleeve Work" /></a></li>
+									<li><a href="#"><img src="images/thumbs/48.jpg" data-large="images/48.jpg" alt="image24" data-description="A_RmK'02" /></a></li>
+									<li><a href="#"><img src="images/thumbs/49.jpg" data-large="images/49.jpg" alt="image19" data-description="A_PcK'37" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/50.jpg" data-large="images/50.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>-->
 									<li><a href="#"><img src="images/thumbs/51.jpg" data-large="images/51.jpg" alt="image21" data-description="As often shrieking undistinguish'd woe" /></a></li>
-									<li><a href="#"><img src="images/thumbs/52.jpg" data-large="images/52.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>
-									<li><a href="#"><img src="images/thumbs/53.jpg" data-large="images/53.jpg" alt="image23" data-description="Sometimes her levell'd eyes their carriage ride" /></a></li>
-									<li><a href="#"><img src="images/thumbs/54.jpg" data-large="images/54.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/55.jpg" data-large="images/55.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
-									<li><a href="#"><img src="images/thumbs/56.jpg" data-large="images/56.jpg" alt="image24" data-description="As they did battery to the spheres intend" /></a></li>
+									<!--<li><a href="#"><img src="images/thumbs/52.jpg" data-large="images/52.jpg" alt="image22" data-description="In clamours of all size, both high and low" /></a></li>-->
+									<li><a href="#"><img src="images/thumbs/53.jpg" data-large="images/53.jpg" alt="image23" data-description="A_PcK'32" /></a></li>
+									<li><a href="#"><img src="images/thumbs/54.jpg" data-large="images/54.jpg" alt="image24" data-description="A_RmK'03" /></a></li>
+									<li><a href="#"><img src="images/thumbs/55.jpg" data-large="images/55.jpg" alt="image24" data-description="A_P'05" /></a></li>
+									<li><a href="#"><img src="images/thumbs/56.jpg" data-large="images/56.jpg" alt="image24" data-description="A_P'06" /></a></li>
+									<li><a href="#"><img src="images/thumbs/57.jpg" data-large="images/57.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/58.jpg" data-large="images/58.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/59.jpg" data-large="images/59.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/60.jpg" data-large="images/60.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/61.jpg" data-large="images/61.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/62.jpg" data-large="images/62.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/63.jpg" data-large="images/63.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/64.jpg" data-large="images/64.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/65.jpg" data-large="images/65.jpg" alt="image24" data-description="A_P'07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/66.jpg" data-large="images/66.jpg" alt="image24" data-description="A_P'07" /></a></li>
 								</ul>
 							</div>
 						</div>
@@ -273,22 +397,36 @@
 							<p>We are here to answer any question you may have about our experience. reach out to us &amp;  we'll respond as soon as we can.Even if there is something you have always wanted to experience and cant find it in our website,let us know and we promise we'll do our best to find it for you.
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<!-- <form id="myform" method="post">
 										<div class="field half first">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="from_name" id="name" />
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="text" name="reply_to" id="email" />
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="5"></textarea>
+											<textarea name="message_html" id="message" rows="5"></textarea>
 										</div>
 										<ul class="actions">
 											<li><a href="mailto:g.amrita17@gmail.com" class="button submit">Send Message</a></li>
 										</ul>
+									</form> -->
+									<form id="myform" method="post">
+									<label>reply_to</label>
+									<input type="text" name="reply_to" />
+									<label>from_name</label>
+									<input type="text" name="from_name" />
+									<label>to_name</label>
+									<input type="text" name="to_name" />
+									<label>message_html</label>
+									<input type="text" name="message_html" />
+									<br><br>
+									<button>
+									Send
+									</button>
 									</form>
 								</section>
 								<section>
@@ -335,14 +473,14 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<!--<script src="assets/js/jquery.min.js"></script>-->
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
 			<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
 			<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 			<script type="text/javascript" src="js/jquery.elastislide.js"></script>

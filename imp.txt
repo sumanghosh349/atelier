@@ -1,0 +1,35 @@
+https://www.freelogoservices.com/step2/page/1
+
+
+view.blade.php
+index.blade.php
+<li class="new-element" style="display:inline-block;" rel="tooltip" data-placement="right" data-original-title="<?php echo $user->first_name." ".$user->last_name;?>">
+               <a href="/home/view/<?php echo $user->username;?>" rel="tooltip" data-placement="right" href="#" data-original-title="<?php echo $user->first_name." ".$user->last_name."</br> ".$user->designation;?>">
+                 <img class="hover-img" src="http://graph.facebook.com/<?php echo $user->facebook_id;?>/picture?type=large">
+               </a>
+             </li>
+
+G:\TechIndyeah\My Projects\alpha.team.com\public\css  -->new-element
+
+https://webjalsha.in/site_2226.xhtml
+
+
+.wrapper.style1 {
+    background-color: #5e42a6;
+} -- main.css
+
+.wrapper.style3 {
+    background-color: #b74e91;
+}
+https://dashboard.emailjs.com/
+http://jsfiddle.net/api/post/library/pure/
+ghoshsuman.bcet@gmail.com/Sr@b@sti1
+
+Transperent background
+-------------------------
+http://www194.lunapic.com/editor/?action=transparent  
+Image resize:
+------------
+http://www.simpleimageresizer.com/
+
+https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2Foriginals%2F7d%2Fa0%2Fa5%2F7da0a5ea2b7acd8e22fee5437fdda197.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F184084703488671169%2F&docid=S_1Zw4cfyHZcVM&tbnid=QBVy8ceHTF24PM%3A&vet=10ahUKEwi14fLBjqHVAhWBgrwKHa9yDhQQMwiIAShYMFg..i&w=1920&h=1200&bih=704&biw=1280&q=intricate%20design%20backgrounds&ved=0ahUKEwi14fLBjqHVAhWBgrwKHa9yDhQQMwiIAShYMFg&iact=mrc&uact=8#h=1200&imgdii=QBVy8ceHTF24PM:&vet=10ahUKEwi14fLBjqHVAhWBgrwKHa9yDhQQMwiIAShYMFg..i&w=1920
